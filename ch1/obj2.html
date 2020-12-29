@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 중괄호는 자바스크립트에서는 객체를 의미. function 옆은 범위(scope)
+        var h1 = {
+            // '', "", 안주는 것은 선택사항 
+            name: '홍길동',
+            age: 20,
+            whoAmI: function() {
+                console.log('나는 ' +this.name +'입니다. 제 나이는 ' +this.age +'입니다.');
+            }
+        };
+
+        var fn = function(item) {
+            console.log('item : ' +item);
+        }
+        
+        fn('ddd');
+        h1.height = 190;
+        h1.whoAmI();
+        console.log('height : ' +h1.height);
+
+    </script>
+</body>
+</html>

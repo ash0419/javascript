@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sum() {
+            var sum = 0;
+            for (var i = 0; i < arguments.length; i++) {
+                sum += arguments[i];
+            }
+            console.log('sum : ' +sum);
+        }
+        sum(1, 2);
+        sum(4, 4, 5);
+        sum(2, 3, 4, 2, 3, 5, 555, 555);
+
+        function multi(n1, n2, n3) {
+            if(n1 && n2 && n3) {
+                console.log(n1 * n2 * n3);
+                return;
+            }
+            console.log('3개 입력');
+        }
+ 
+        multi(1, 2);
+        multi(1, 2, 3);
+    </script>
+</body>
+</html>

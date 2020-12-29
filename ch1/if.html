@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        if(10 > 5) {
+            console.log('10은 5보다 크다.');
+        }
+
+        // 자바스크립트에서는 숫자는 0을 제외한 나머지 숫자들은 true
+        if(1) {
+            console.log('1은 true입니다.');
+        }
+        if(2) {
+            console.log('2은 true입니다.');
+        }
+        if(-2) {
+            console.log('-2은 true입니다.');
+        }
+        if(0) {
+            console.log('0은 false입니다.');
+        }
+
+        // 문자열에서는 빈 칸일 때만 false
+        var msg = '안녕';
+        if(msg) {
+            console.log('msg : ' +msg);
+        }
+        var msg = '';
+        if(msg) {
+            console.log('msg : ' +msg);
+        }
+        
+        // 배열 및 객체에 값이 없어도 주소값이 들어가기 때문에 true
+        // undefined 는 false, null 값을 줘도 false
+        var arr = [];
+        if(arr) {
+            console.log('배열입니다.');
+        }
+        var obj = {};
+        if(obj) {
+            console.log('객체입니다.');
+        }
+        
+    </script>
+</body>
+</html>

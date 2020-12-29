@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function makeObject() {
+            var count = 0; // 함수가 끝나도 값이 초기화가 되지 않는다. 계속 살아 있음
+            return {
+                addCount: function() {
+                    count++;
+                },
+                printCount: function() {
+                    console.log('count : ' +count);
+                }
+            }
+        }
+        var obj1 = makeObject();
+        var obj2 = makeObject();
+
+        obj1.addCount();
+        obj1.addCount();
+        obj1.addCount();
+        obj1.printCount();
+        obj2.printCount();
+
+    </script>
+</body>
+</html>

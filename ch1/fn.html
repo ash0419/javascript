@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function noReturn(item='haha') { // 기본값을 줄 수 있다
+            console.log(item);
+        }
+
+        noReturn('안녕', 'dddd', 12121212);
+        noReturn('Hello');
+        noReturn(); // undefined
+
+        function returnFn(item) {
+            return item + 10;
+        }
+
+        var plusTen = returnFn(20);
+        console.log('plusTen : ' + plusTen);
+
+    </script>
+</body>
+</html>
+
