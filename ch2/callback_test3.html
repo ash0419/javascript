@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = [4, 9, 11, 16, 29, 28, 33];
+        var arr2 = arr.filter((val) => {
+            return val % 2 == 0; // boolean형으로 true값만 배열에 담아준다
+        });
+        console.log('arr : ' +arr);
+        console.log('arr2 : ' +arr2);
+
+        var myArr = {
+            '0': 4,
+            '1': 9,
+            2: 11,
+            3: 16,
+            4: 29,
+            5: 28,
+            6: 33,
+            length: 7,
+            forEach: function(cb) {
+                for(var i =0; i<this.length; i++) {
+                    cb(this[i]);
+                }
+            },
+            map: function(cb) {
+                var tempArr=[];
+                for (var i =0; i<this.length; i++) {
+                    tempArr.push(cb(this[i]));
+                }
+                return tempArr;
+            },
+            filter: function(cb) {
+                var tempArr=[];
+                for (var i =0; i<this.length; i++) {
+                    if(cb(this[i])){
+                        tempArr.push(this[i]);
+                    }
+                }
+                return tempArr;
+            }
+        };
+        var arr3 = myArr.filter((val) => {
+            return val % 2 == 0;
+        });
+
+        console.log('arr3 : ' +arr3);
+    </script>
+</body>
+</html>
