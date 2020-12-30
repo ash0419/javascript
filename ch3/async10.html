@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       function calc(n1, n2) {
+           return new Promise((resolve, reject) => {
+               var result = n1 / n2;
+               // reject나 resolve 중 빠른 순서만 실행
+               if(result == Infinity) { //에러
+                    reject('문제발생'); // 에러를 throw해줌
+                } else { // 이상 없음
+                    resolve(result);
+                }
+           });
+       }
+
+       calc(10, 0).then((val) => {
+           console.log('1val : ' +val);
+       }).catch((val) => {
+            console.log('1err : ' +val);
+       }).then((val) => { // finally처럼 실행되는 부분
+           console.log('1finally' + val);
+       });
+
+       calc(10, 22).then((val) => {
+           console.log('2val : ' +val);
+       }).catch((val) => {
+            console.log('2err : ' +val);
+       }).then(() => {
+           console.log('2finally');
+       });
+    </script>
+</body>
+</html>

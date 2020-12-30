@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 비동기 방식이여서 fn2가 먼저 호출
+        function fn1() {
+            setTimeout(() => {
+                console.log('fn1 called');
+                fn2();
+            }, 3000); // 3초 후에 실행
+        }
+        function fn2() {
+            setTimeout(() => {
+                console.log('fn2 called');
+            }, 2000);
+        }
+        fn1();
+    </script>
+</body>
+</html>

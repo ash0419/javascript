@@ -35,10 +35,10 @@
                 }
                 return tempArr;
             },
-            filter: function(cb) {
+            filter: function(fn) {
                 var tempArr=[];
                 for (var i =0; i<this.length; i++) {
-                    if(cb(this[i])){
+                    if(fn(this[i])){
                         tempArr.push(this[i]);
                     }
                 }

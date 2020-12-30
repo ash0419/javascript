@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calc(cb, n1, n2) {
+            cb(n1, n2);
+        }
+
+        function sum(a, b) {
+            console.log('sum : ' +(a +b));
+        }
+
+        function multi(a, b) {
+            console.log('multi : ' +(a*b));
+        }
+
+        calc(sum, 10, 20);
+        calc(multi, 10, 20);
+    </script>
+</body>
+</html>

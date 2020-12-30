@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fn1(n1, n2) {
+            var result;
+            setTimeout(() => {
+                result = n1 + n2;
+            }, 3000); // 3초 후에 실행
+            return result;
+        }
+        function fn2(val) {
+            var result;
+            setTimeout(() => {
+                result = val * 2;
+            }, 1000);
+            return result;
+        }
+        
+        var result = fn1(3, 5);
+        var result2 = fn2(result);
+        console.log('result2 : ' +result2);
+    </script>
+</body>
+</html>

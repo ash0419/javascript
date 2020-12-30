@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var n1 = 10;
+        var n2 = 20;
+        var p = new Promise(function(resolve) { // 함수를 넣어줌
+            setTimeout(() => {
+                resolve(n1 + n2); // retrun 해주고 싶은 값
+            }, 2000);
+        });
+
+        p.then((result) => { // .then을 쓰고 난 다음에 다시 함수를 사용해서 결과조정
+            console.log('result : ' +result);
+        })
+    </script>
+</body>
+</html>
