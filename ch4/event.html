@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="tx1">
+    <input type="number" id="tx2">
+    <input type="number" id="result" readonly>
+    <button id="btnSum">더하기</button>
+    <script>
+        var eleBtn = document.querySelector('#btnSum');
+
+        eleBtn.onclick = sum;
+        
+        function sum() {
+            // parseInt와 Number의 차이점 : parseInt는 문자가 섞여 있으면 문자열 만나기 전까지 숫자로 바꿔줌, Number는 문자가 있으면 NaN으로 바꿔준다.
+            var tx1Value = parseInt(document.querySelector('#tx1').value); // 소수를 정수로 바꿀 때 주로 사용
+            var tx2Value = Number(document.querySelector('#tx2').value);
+
+            document.querySelector('#result').value = tx1Value + tx2Value;
+        }
+
+    </script>
+</body>
+</html>

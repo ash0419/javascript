@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <button onclick="getData()">자료 가져오기</button>
+    <div id="container"></div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        var cont = document.querySelector('#container');
+
+        function getData(){
+            var url = 'https://api.mocki.io/v1/b043df5a';
+            var http = axios.get(url); 
+
+            http.then((res) =>{
+                if(res.status === 200) { // status: 200 웹 통신에서 'ok'라는 값
+                    res.data.forEach((item) =>{
+                        // console.log(item);
+                        makeEle(item);
+                    });
+                }
+                console.log(res);
+            });
+        }
+
+        function makeEle(item) {
+            var div = document.createElement('div');
+
+            var divCity = document.createElement('div');
+            divCity.innerText = 'city : ' +item.city;
+            var divName = document.createElement('div');
+            divName.innerText = 'name : ' +item.name;
+
+            div.append(divCity);
+            div.append(divName);
+            cont.append(div);
+        }
+        
+    </script>
+</body>
+</html>
