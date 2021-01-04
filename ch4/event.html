@@ -10,12 +10,21 @@
     <input type="number" id="tx2">
     <input type="number" id="result" readonly>
     <button id="btnSum">더하기</button>
+    <button onclick="delEvent();">이벤트 삭제</button>
     <script>
         var eleBtn = document.querySelector('#btnSum');
 
         eleBtn.onclick = sum;
-        
-        function sum() {
+        // eleBtn.onclick = sum(); X, return 값을 onclick에 넣는다는 의미이기 때문에 쓰면 안된다.
+        eleBtn.onclick();
+        sum();
+
+        eleBtn.onclick = function(e) {
+            sum();
+        }
+
+        function sum(e) {
+            // function 바깥 부분은 한 번만 실행 바뀌는 값을 가지고 올 때는 함수 안에다가 설정해야한다.
             // parseInt와 Number의 차이점 : parseInt는 문자가 섞여 있으면 문자열 만나기 전까지 숫자로 바꿔줌, Number는 문자가 있으면 NaN으로 바꿔준다.
             var tx1Value = parseInt(document.querySelector('#tx1').value); // 소수를 정수로 바꿀 때 주로 사용
             var tx2Value = Number(document.querySelector('#tx2').value);
@@ -23,6 +32,9 @@
             document.querySelector('#result').value = tx1Value + tx2Value;
         }
 
+        function delEvent() {
+            eleBtn.onclick = null;
+        }
     </script>
 </body>
 </html>

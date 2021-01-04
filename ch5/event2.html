@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="tx1">
+    <input type="number" id="tx2">
+    <input type="number" id="result" readonly>
+    <button id="btnSum">더하기</button>
+    <script>
+        var eleTx1 = document.querySelector('#tx1');
+        var eleTx2 = document.querySelector('#tx2');
+        var eleResult = document.querySelector('#result');
+        var eleBtn = document.querySelector('#btnSum');
+
+        // 2개 이상의 함수를 동시에 걸어줄 수 있다.
+        eleBtn.addEventListener('click', sum);
+        eleBtn.addEventListener('click', print);
+        
+        eleBtn.removeEventListener('click', sum);
+        eleBtn.removeEventListener('click', print);
+        function sum() {
+            var tx1Val = parseInt(eleTx1.value);
+            var tx2Val = Number(eleTx2.value);
+            eleResult.value = tx1Val + tx2Val;
+        }
+
+        function print() {
+            console.log(eleTx1.value + eleTx2.value);
+        }
+    </script>
+</body>
+</html>

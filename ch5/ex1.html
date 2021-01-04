@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="container">
+        <span></span>
+    </div>
+    <div id="second"></div>
+    <script>
+        var cont = document.querySelector('#container');
+        var second = document.querySelector('#second');
+        var div = document.createElement('div');
+        div.id ='children';
+        document.bgColor = 'color:black;';
+        // 마지막에 적었던 곳으로 이동된다. 여러 객체가 만들어지는건 아니다.
+        cont.prepend(div);
+        cont.append(div);
+
+        second.append(div);
+    </script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgb(87, 86, 86)
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        
+    </div>
+    <script>
+        var cont = document.querySelector('#container');
+
+        var inputColor = document.createElement('input');
+        inputColor.type = 'color';
+        cont.append(inputColor);
+
+        var btnClear = document.createElement('input');
+        btnClear.type = 'button';
+        btnClear.value = 'clear';
+        btnClear.onclick = (e) => {
+            var all_tds = document.querySelectorAll('td');
+            all_tds.forEach((item) => {
+                item.style.backgroundColor= '';
+            });
+            /*
+            tdArr.forEach((item) => {
+                item.style.backgroundColor= '';
+            })
+            */
+        }
+        cont.append(btnClear);
+
+        var tdArr = [];
+        var tbl = document.createElement('table');
+        for(var i = 0; i < 20; i++) {
+            var tr = document.createElement('tr');
+
+            for(var j = 0; j < 20; j++) {
+                var td = document.createElement('td');
+                td.onclick = (e) => {
+                    // if(!(e.target.style.backgroundColor)){
+                    //     e.target.style.backgroundColor = inputColor.value;
+                    // } else {
+                    //     e.target.style.backgroundColor = '';
+                    // };
+                    e.target.style.backgroundColor = (!(e.target.style.backgroundColor)? inputColor.value : '');
+                }
+                tdArr.push(td);
+                tr.append(td);
+            }
+            tbl.append(tr);
+        }
+        cont.append(tbl);
+    </script>
+</body>
+</html>
