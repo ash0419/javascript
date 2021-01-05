@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        td {
+            text-align: center;
+            width: 40px;
+            height: 40px;
+            border: 1px solid rgb(87, 86, 86)
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="확인" onclick="chk();">
+    <div id="container">
+    </div>
+    <script>
+        var chkArr = [];
+        function chk() {
+            chkArr.sort();
+            console.log(chkArr);
+        }
+        function toggleVal(val) {
+            if(chkArr.indexOf(val) === -1) {
+                chkArr.push(val);
+            } else{
+                chkArr.splice(chkArr.indexOf(val), 1);
+            }
+        }
+        var cont = document.querySelector('#container');
+        var tdArr = [];
+        var tbl = document.createElement('table');
+        
+        var no = 1;
+        for(let i = 0; i < 20; i++) {
+            var tr = document.createElement('tr');
+            for(let j = 0; j < 20; j++) {
+                var td = document.createElement('td');
+                td.innerText= `${no++}`;    
+                td.onclick = (e) => {
+                    toggleVal(Number(e.target.innerText));
+                    e.target.style.backgroundColor = e.target.style.backgroundColor ? '' :'#ff3322';
+                };
+                tdArr.push(td);
+                tr.append(td);
+            }
+            tbl.append(tr);
+        }
+        cont.append(tbl);
+    </script>
+</body>
+</html>

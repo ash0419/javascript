@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getObject() {
+            var cnt = 0;
+            return {
+                addCnt : function() {
+                    cnt++;
+                },
+                printCnt: function() {
+                    console.log(cnt);
+                }
+            }
+        }
+
+        var obj1 = getObject();
+        var obj2 = getObject();
+
+        obj1.addCnt();
+        obj1.addCnt();
+        obj1.printCnt();
+
+        obj2.addCnt();
+        obj2.printCnt();
+    </script>
+</body>
+</html>

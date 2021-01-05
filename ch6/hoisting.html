@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var라는 변수명 및 function이 있으면 가장 위로 올린다(hoisting), var는 함수단위
+        function test() {
+            if(1) {
+                let aa = 10; // let의 범위는 block단위로 일반 변수, const는 상수 개념이다.
+                             // const는 선언 할때부터 값을 줘야한다. 변경불가
+            }
+            console.log('aa : ' + aa);
+        }
+        test();
+    </script>
+</body>
+</html>
